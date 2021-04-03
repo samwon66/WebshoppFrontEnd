@@ -10,4 +10,8 @@
     <Folder Include="Controllers\UserControllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Inlämning2\Inlämning2\Inlämning2.csproj" />
+  </ItemGroup>
+
 </Project>

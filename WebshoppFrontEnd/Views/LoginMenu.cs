@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inlämning2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,18 @@ namespace WebbshopFrontEnd.Views
 {
     public static class LoginMenu
     {
-        public static void ShowLogInMenu()
+        public static (string, string) ShowLogInMenu()
         {
             Console.Clear();
             Console.WriteLine("********************");
             Console.WriteLine("*     Inloggning   *");
             Console.WriteLine("********************\n");
             Console.Write("Ditt användarnamn: ");
-            var username = Console.ReadLine();
+            string username = Console.ReadLine();
             Console.Write("Ditt lösenord: ");
-            var password = Console.ReadLine();
-
+            string password = Console.ReadLine();
+            var user = (username, password);
+            return user;
         }
     }
 }
