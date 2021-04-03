@@ -11,6 +11,10 @@ namespace WebbshopFrontEnd.Views.Admin
     {
         public static WebbShopAPI api = new WebbShopAPI();
 
+        /// <summary>
+        /// Vyn för hantering av användare.
+        /// </summary>
+        /// <param name="adminId"></param>
         public static void ShowUserMenu(int adminId)
         {
             bool loop = true;

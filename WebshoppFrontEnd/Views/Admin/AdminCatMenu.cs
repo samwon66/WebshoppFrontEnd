@@ -11,6 +11,34 @@ namespace WebbshopFrontEnd.Views.Admin
     {
         public static WebbShopAPI api = new WebbShopAPI();
         
+        /// <summary>
+        /// Vyn för att lägga till en kategori.
+        /// </summary>
+        /// <returns></returns>
+        public static string AddCatMenu()
+        {
+            Console.Write("Ange ett namn på kategori som du vill lägga till: ");
+            return Console.ReadLine();
+
+        }
+
+        public static (int, string) ShowAddCatToBook()
+        {
+            Console.Write("Ange ett sökord på bokens title som du söker: ");
+            var books = api.GetBooks(Console.ReadLine());
+            Console.WriteLine("Hitta följande bok/böcker");
+            foreach (var b in books) { Console.WriteLine($"BokID: {b.BookId} - Titel: {b.Title}"); }
+            Console.Write("Var god och ange bokens ID som du vill lägga kategori på: ");
+            var bookId = int.Parse(Console.ReadLine());
+            Console.Write("Ange namnet på kategori: ");
+            var catName = Console.ReadLine();
+            return (bookId, catName);
+        }
+
+        /// <summary>
+        /// Vyn för hantering av kategori.
+        /// </summary>
+        /// <param name="adminId"></param>
         public static void ShowCatMenu(int adminId)
         {
             bool loop = true;

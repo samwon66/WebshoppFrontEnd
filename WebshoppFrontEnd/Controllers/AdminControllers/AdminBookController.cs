@@ -20,18 +20,21 @@ namespace WebbshopFrontEnd.Controllers.AdminControllers
         public static void AddBook(int adminId)
         {
             api.Ping(adminId);
-            Console.Write("Var god och ange bokens titel: ");
-            string title = Console.ReadLine();
-            Console.Write("Författare: ");
-            string author = Console.ReadLine();
-            Console.Write("Pris: ");
-            int price = int.Parse(Console.ReadLine());
-            Console.Write("Antal böcker i lagret: ");
-            int amount = int.Parse(Console.ReadLine());
-
+            (string title, string author, int price, int amount) = AdminBookMenu.AddBookMenu(); 
             var newBook = api.AddBook(adminId, title, author, price, amount);
             if (!newBook) { Message.ErrorInput(); }
             Console.Clear();
+        }
+
+        /// <summary>
+        /// Metod för att ta bort en bok.
+        /// </summary>
+        /// <param name="adminId"></param>
+        public static void DeleteBook(int adminId)
+        {
+            api.Ping(adminId);
+            int bookId = AdminBookMenu.DeleteBookMenu();
+            api.DeleteBook(adminId, bookId);
         }
 
         /// <summary>
@@ -45,6 +48,10 @@ namespace WebbshopFrontEnd.Controllers.AdminControllers
             api.SetAmount(adminId, bookId, amount);
         }
 
+        /// <summary>
+        /// Metod för att uppdatera en bok.
+        /// </summary>
+        /// <param name="adminId"></param>
         public static void UpdateBook(int adminId)
         {
             api.Ping(adminId);

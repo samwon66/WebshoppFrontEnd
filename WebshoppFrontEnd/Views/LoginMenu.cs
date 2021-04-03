@@ -9,6 +9,10 @@ namespace WebbshopFrontEnd.Views
 {
     public static class LoginMenu
     {
+        /// <summary>
+        /// Vyn för inloggning
+        /// </summary>
+        /// <returns></returns>
         public static (string, string) ShowLogInMenu()
         {
             Console.Clear();

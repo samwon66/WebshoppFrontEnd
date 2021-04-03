@@ -13,7 +13,24 @@ namespace WebbshopFrontEnd.Views.Admin
         public static WebbShopAPI api = new WebbShopAPI();
 
         /// <summary>
-        /// Visa Admin när bokens antal ska sättas.
+        /// Vyn för att lägga till en bok.
+        /// </summary>
+        /// <returns></returns>
+        public static (string, string, int, int) AddBookMenu()
+        {
+            Console.Write("Var god och ange bokens titel: ");
+            string title = Console.ReadLine();
+            Console.Write("Författare: ");
+            string author = Console.ReadLine();
+            Console.Write("Pris: ");
+            int price = int.Parse(Console.ReadLine());
+            Console.Write("Antal böcker i lagret: ");
+            int amount = int.Parse(Console.ReadLine());
+            return(title, author, price, amount);
+        }
+        
+        /// <summary>
+        /// Vyn för att sätta bokens antal.
         /// </summary>
         /// <returns></returns>
         public static (int, int) AmountInput()
@@ -30,15 +47,21 @@ namespace WebbshopFrontEnd.Views.Admin
         }
 
         /// <summary>
-        /// Visa meny för att ta bort en bok.
+        /// Vyn för att ta bort en bok.
         /// </summary>
-        public static void DeleteBookMenu()
+        public static int DeleteBookMenu()
         {
-
+            Console.WriteLine("Ange bokens titel som du vill ta bort: ");
+            var books = api.GetBooks(Console.ReadLine());
+            Console.WriteLine("Hitta följande bok/böcker");
+            foreach (var b in books) { Console.WriteLine($"BokID: {b.BookId} - Titel: {b.Title}"); }
+            Console.Write("Var god och ange bokens ID som du vill ta bort: ");
+            var bookId = int.Parse(Console.ReadLine());
+            return bookId;
         }
 
         /// <summary>
-        /// Visa admins bokmeny
+        /// Vyn för hantering av böcker.
         /// </summary>
         /// <param name="adminId"></param>
         public static void ShowBookMenu(int adminId)
@@ -71,7 +94,7 @@ namespace WebbshopFrontEnd.Views.Admin
         }
 
         /// <summary>
-        /// Visa meny för att uppdatera en bok.
+        /// Vyn för att uppdatera en bok.
         /// </summary>
         /// <returns></returns>
         public static (int, string, string, int) UpdateBookInput()
