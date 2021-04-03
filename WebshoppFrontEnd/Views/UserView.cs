@@ -14,8 +14,8 @@ namespace WebbshopFrontEnd.Views
         public static void RegisterUser(string username, string password)
         {
             Console.WriteLine("Du är inte kund hos oss, var vänligen och registera dig.");
-            Console.Write("Var god och angett ett användarnamn: ");
-            Console.Write("Skriv lösenord igen: ");
+            Console.WriteLine($"Du har angett {username} som användarnamn och {password} som lösenord.");
+            Console.Write("Skriv lösenord igen för att verifiera: ");
             string pwVerify = Console.ReadLine();
             api.Register(username, password, pwVerify);
         }
@@ -42,7 +42,7 @@ namespace WebbshopFrontEnd.Views
                     int choice = int.Parse(Console.ReadLine());
                     if (choice == 6)
                     {
-                        Console.WriteLine("Du loggar ut nu.");
+                        Message.SignOut();
                         api.LogOut(userId);
                         loop = false;
                     }

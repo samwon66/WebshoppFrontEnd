@@ -8,9 +8,9 @@ using WebbshopFrontEnd.Views;
 
 namespace WebbshopFrontEnd.Models
 {
-    public class Start
+    public static class Start
     {
-        public void RunStart()
+        public static void RunStart()
         {
             LoginController.SignIn();
         }

@@ -11,8 +11,7 @@ namespace WebshoppFrontEnd
         static void Main(string[] args)
         {
             Seeder.Seed();
-            var start = new Start();
-            start.RunStart();
+            Start.RunStart();
         }
     }
 }
