@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="Controllers\AdminControllers\" />
     <Folder Include="Controllers\UserControllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
