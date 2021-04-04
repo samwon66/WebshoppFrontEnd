@@ -1,32 +1,13 @@
-﻿using Inlämning2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebbshopFrontEnd.Views;
-
+﻿
 namespace WebbshopFrontEnd.Controllers.UserControllers
 {
+    using Inlämning2;
+    using System;
+    using WebbshopFrontEnd.Views;
+
     public static class UserBookController
     {
         public static WebbShopAPI api = new WebbShopAPI();
-
-        /// <summary>
-        /// Metod för hitta böcker i en kategori.
-        /// </summary>
-        /// <param name="userId"></param>
-        public static void GetBooksInCat(int userId)
-        {
-            api.Ping(userId);
-
-            UserCatController.ListAllCategory(userId);
-            Console.Write("Var god och ange en kategori för visning: ");
-            var catId = int.Parse(Console.ReadLine());
-            var books = api.GetCategory(catId);
-            UserView.ShowBooks(books); 
-            
-        }
 
         /// <summary>
         /// Metod för att hitta tillgängliga böcker i en kategori.
@@ -44,6 +25,26 @@ namespace WebbshopFrontEnd.Controllers.UserControllers
 
         }
 
+        /// <summary>
+        /// Metod för hitta böcker i en kategori.
+        /// </summary>
+        /// <param name="userId"></param>
+        public static void GetBooksInCat(int userId)
+        {
+            api.Ping(userId);
+
+            UserCatController.ListAllCategory(userId);
+            Console.Write("Var god och ange en kategori för visning: ");
+            var catId = int.Parse(Console.ReadLine());
+            var books = api.GetCategory(catId);
+            UserView.ShowBooks(books); 
+            
+        }
+        
+        /// <summary>
+        /// Metod för söka en bok med sökord.
+        /// </summary>
+        /// <param name="userId"></param>
         public static void SearchBook(int userId)
         {
             api.Ping(userId);
@@ -66,6 +67,10 @@ namespace WebbshopFrontEnd.Controllers.UserControllers
             
         }
 
+        /// <summary>
+        /// Metod för att söka bok med författare.
+        /// </summary>
+        /// <param name="userId"></param>
         public static void SearchBookByAuthor(int userId)
         {
             api.Ping(userId);

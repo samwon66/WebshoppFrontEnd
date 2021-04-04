@@ -1,13 +1,9 @@
-﻿using Inlämning2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebbshopFrontEnd.Views;
-
+﻿
 namespace WebbshopFrontEnd.Controllers
 {
+    using Inlämning2;
+    using WebbshopFrontEnd.Views;
+
     public static class LoginController
     {
         public static WebbShopAPI api = new WebbShopAPI();

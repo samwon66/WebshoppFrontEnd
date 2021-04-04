@@ -1,14 +1,12 @@
-﻿using Inlämning2;
-using Inlämning2.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebbshopFrontEnd.Controllers.UserControllers;
-
+﻿
 namespace WebbshopFrontEnd.Views
 {
+    using Inlämning2;
+    using Inlämning2.Models;
+    using System;
+    using System.Collections.Generic;
+    using WebbshopFrontEnd.Controllers.UserControllers;
+
     public static class UserView
     {
         public static WebbShopAPI api = new WebbShopAPI();

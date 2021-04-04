@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WebbshopFrontEnd.Views
 {
+    using System;
+
     /// <summary>
     /// Klass för alla felmeddelanden.
     /// </summary>
@@ -18,6 +15,9 @@ namespace WebbshopFrontEnd.Views
         public static void BookNotExisted() { Console.WriteLine("Boken hittas inte."); }
 
         public static void CatNotExisted() { Console.WriteLine("Kategoriet hittas inte."); }
+
+        public static void UserNotExisted() { Console.WriteLine("Användaren hittas inte."); }
+
 
     }
 }

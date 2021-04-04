@@ -1,13 +1,10 @@
-﻿using Inlämning2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebbshopFrontEnd.Controllers.AdminControllers;
-
+﻿
 namespace WebbshopFrontEnd.Views.Admin
 {
+    using Inlämning2;
+    using System;
+    using WebbshopFrontEnd.Controllers.AdminControllers;
+
     public static class AdminBookMenu
     {
         public static WebbShopAPI api = new WebbShopAPI();

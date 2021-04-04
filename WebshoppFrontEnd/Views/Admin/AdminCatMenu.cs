@@ -1,12 +1,10 @@
-﻿using Inlämning2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WebbshopFrontEnd.Views.Admin
 {
+    using Inlämning2;
+    using System;
+    using WebbshopFrontEnd.Controllers.AdminControllers;
+
     public static class AdminCatMenu
     {
         public static WebbShopAPI api = new WebbShopAPI();
@@ -53,6 +51,18 @@ namespace WebbshopFrontEnd.Views.Admin
                 Console.WriteLine("[3]  Uppdatera kategori");
                 Console.WriteLine("[4]  Ta bort kartegori som saknas böcker");
                 Console.WriteLine("[5]  Tillbaka till adminstratörmenyn.");
+
+                try
+                {
+                    int choice = int.Parse(Console.ReadLine());
+                    if (choice == 4)
+                    {
+                        AdminViews.AdminMenu(adminId);
+                        loop = false;
+                    }
+                    else { AdminChoiceController.CatMenuChoice(adminId, choice); }
+                }
+                catch { Message.ErrorInput(); }
             }
         }
     }

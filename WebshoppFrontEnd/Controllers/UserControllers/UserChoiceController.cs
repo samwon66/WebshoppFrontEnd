@@ -1,14 +1,9 @@
-﻿using Inlämning2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebbshopFrontEnd.Models;
-using WebbshopFrontEnd.Views;
-
+﻿
 namespace WebbshopFrontEnd.Controllers.UserControllers
 {
+    using Inlämning2;
+    using WebbshopFrontEnd.Views;
+
     public static class UserChoiceController
     {
         public static WebbShopAPI api = new WebbShopAPI();
